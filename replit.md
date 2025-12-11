@@ -1,12 +1,13 @@
 # Plancha24 Barcelona - Landing Page
 
 ## Overview
-Single-page static landing site for a local "planchado a domicilio" (ironing at home) service in Barcelona, Spain. Built with pure HTML + CSS, fully responsive (mobile-first), and optimized for conversions.
+Single-page landing site for un servicio de "planchado a domicilio" en Barcelona, con captura de leads mediante un formulario que guarda los envíos en CSV en el servidor.
 
 ## Project Structure
 ```
 /
-├── index.html     # Main landing page (all HTML + CSS in one file)
+├── index.html     # Main landing page (HTML + CSS + JS for form handling)
+├── server.js      # Lightweight Node server to serve the site and store leads in CSV
 ├── replit.md      # Project documentation
 └── .replit        # Replit configuration
 ```
@@ -14,9 +15,9 @@ Single-page static landing site for a local "planchado a domicilio" (ironing at 
 ## Tech Stack
 - Pure HTML5 (semantic markup)
 - Pure CSS3 (embedded in `<style>` tag)
-- No JavaScript
-- No external dependencies or CDNs
-- GitHub Pages compatible
+- Vanilla JavaScript for client-side interactions
+- Lightweight Node server (no external npm deps)
+- GitHub Pages compatible for static hosting (API needed for lead capture)
 
 ## Key Features
 1. **Fixed header** - Service branding + WhatsApp CTA button
@@ -35,8 +36,10 @@ Single-page static landing site for a local "planchado a domicilio" (ironing at 
 
 ## Running Locally
 ```bash
-python3 -m http.server 5000
+node server.js
 ```
+
+The server listens on port `3000` by default and appends each lead submission to `data/leads.csv`.
 
 ## Deployment
 This is a static site - simply deploy `index.html` to any static hosting:

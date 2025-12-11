@@ -289,6 +289,11 @@
             position: relative;
         }
 
+        .pricing-card .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
         .pricing-badge {
             position: absolute;
             top: -12px;
@@ -360,6 +365,20 @@
             margin-right: auto;
             font-size: 0.9375rem;
             color: #92400e;
+        }
+
+        .form-status {
+            margin-top: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .form-status.success {
+            color: #047857;
+        }
+
+        .form-status.error {
+            color: #b91c1c;
         }
 
         /* Sticky CTA */
@@ -613,49 +632,86 @@
         <!-- Pricing Section -->
         <section class="pricing-section" id="precios">
             <div class="container">
-                <h2 class="section-title">Precios transparentes</h2>
+                <h2 class="section-title">Planes mensuales</h2>
                 <div class="pricing-grid">
                     <div class="pricing-card">
                         <h3>Colada de 5kg</h3>
-                        <p class="pricing-weight">Ropa variada</p>
-                        <div class="price">12€</div>
+                        <p class="pricing-weight">Ropa variada · 1 recogida y 1 entrega semanal</p>
+                        <div class="price">88€ <span>/ mes</span></div>
                         <ul class="pricing-features">
-                            <li>Recogida a domicilio</li>
-                            <li>Entrega en 24 horas</li>
+                            <li>Recogida y entrega semanal incluidas</li>
+                            <li>Entrega en 24 horas tras la recogida</li>
                             <li>Planchado profesional</li>
                             <li>Doblado perfecto</li>
                         </ul>
-                        <a href="https://wa.me/34660015969?text=Hola,%20quiero%20info%20sobre%20la%20colada%20de%205kg." class="btn btn-whatsapp">Pedir colada 5kg</a>
+                        <a href="#formulario" class="btn btn-primary" data-plan="Colada de 5kg">Elegir plan 5kg</a>
                     </div>
                     <div class="pricing-card featured">
                         <span class="pricing-badge">Recomendado</span>
                         <h3>Colada de 8kg</h3>
-                        <p class="pricing-weight">Ropa variada</p>
-                        <div class="price">18€</div>
+                        <p class="pricing-weight">Ropa variada · 1 recogida y 1 entrega semanal</p>
+                        <div class="price">99€ <span>/ mes</span></div>
                         <ul class="pricing-features">
-                            <li>Recogida a domicilio</li>
-                            <li>Entrega en 24 horas</li>
+                            <li>Recogida y entrega semanal incluidas</li>
+                            <li>Entrega en 24 horas tras la recogida</li>
                             <li>Planchado profesional</li>
                             <li>Doblado perfecto</li>
                         </ul>
-                        <a href="https://wa.me/34660015969?text=Hola,%20quiero%20info%20sobre%20la%20colada%20de%208kg." class="btn btn-whatsapp">Pedir colada 8kg</a>
+                        <a href="#formulario" class="btn btn-primary" data-plan="Colada de 8kg">Elegir plan 8kg</a>
                     </div>
                     <div class="pricing-card">
                         <h3>Colada de 10kg</h3>
-                        <p class="pricing-weight">Ropa variada</p>
-                        <div class="price">22€</div>
+                        <p class="pricing-weight">Ropa variada · 1 recogida y 1 entrega semanal</p>
+                        <div class="price">119€ <span>/ mes</span></div>
                         <ul class="pricing-features">
-                            <li>Recogida a domicilio</li>
-                            <li>Entrega en 24 horas</li>
+                            <li>Recogida y entrega semanal incluidas</li>
+                            <li>Entrega en 24 horas tras la recogida</li>
                             <li>Planchado profesional</li>
                             <li>Doblado perfecto</li>
                         </ul>
-                        <a href="https://wa.me/34660015969?text=Hola,%20quiero%20info%20sobre%20la%20colada%20de%2010kg." class="btn btn-whatsapp">Pedir colada 10kg</a>
+                        <a href="#formulario" class="btn btn-primary" data-plan="Colada de 10kg">Elegir plan 10kg</a>
                     </div>
                 </div>
                 <div class="pricing-note">
                     <strong>Nota importante:</strong> Los precios aplican a coladas de ropa variada. En caso de coladas con exceso de camisas, se aplicará un suplemento adicional.
                 </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="why-section" id="formulario">
+            <div class="container">
+                <h2 class="section-title" id="form-title">Déjanos tus datos y te llamamos</h2>
+                <p style="text-align: center; color: var(--text-medium); margin: -1rem auto 1.5rem; max-width: 650px;">Gracias por tu interés, te llamaremos lo más pronto posible.</p>
+                <form id="plan-form" novalidate style="display: grid; gap: 1rem; max-width: 700px; margin: 0 auto;">
+                    <label style="display: flex; flex-direction: column; gap: 0.35rem; font-weight: 600; color: var(--text-dark);">
+                        Nombre completo
+                        <input type="text" name="Nombre" required placeholder="Tu nombre" style="padding: 0.75rem 0.85rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 1rem;">
+                    </label>
+                    <label style="display: flex; flex-direction: column; gap: 0.35rem; font-weight: 600; color: var(--text-dark);">
+                        Teléfono
+                        <input type="tel" name="Telefono" required placeholder="Tu móvil" style="padding: 0.75rem 0.85rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 1rem;">
+                    </label>
+                    <label style="display: flex; flex-direction: column; gap: 0.35rem; font-weight: 600; color: var(--text-dark);">
+                        Email
+                        <input type="email" name="Email" required placeholder="tu@correo.com" style="padding: 0.75rem 0.85rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 1rem;">
+                    </label>
+                    <label style="display: flex; flex-direction: column; gap: 0.35rem; font-weight: 600; color: var(--text-dark);">
+                        Código postal
+                        <input type="text" name="Codigo Postal" required placeholder="08001" style="padding: 0.75rem 0.85rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 1rem;">
+                    </label>
+                    <label style="display: flex; flex-direction: column; gap: 0.35rem; font-weight: 600; color: var(--text-dark);">
+                        Plan mensual
+                        <select name="Plan" id="plan-select" required style="padding: 0.75rem 0.85rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 1rem;">
+                            <option value="">Selecciona un plan</option>
+                            <option value="Colada de 5kg">Colada de 5kg (88€/mes)</option>
+                            <option value="Colada de 8kg">Colada de 8kg (99€/mes)</option>
+                            <option value="Colada de 10kg">Colada de 10kg (119€/mes)</option>
+                        </select>
+                    </label>
+                    <button type="submit" class="btn btn-primary btn-lg" style="justify-content: center;">Enviar datos</button>
+                    <div class="form-status" id="form-status" aria-live="polite"></div>
+                </form>
             </div>
         </section>
 
@@ -698,5 +754,84 @@
             Contactar por WhatsApp
         </a>
     </div>
+
+    <script>
+        const planButtons = document.querySelectorAll('[data-plan]');
+        const planSelect = document.getElementById('plan-select');
+        const formSection = document.getElementById('formulario');
+        const planForm = document.getElementById('plan-form');
+        const submitButton = planForm?.querySelector('button[type="submit"]');
+        const statusMessage = document.getElementById('form-status');
+
+        planButtons.forEach((button) => {
+            button.addEventListener('click', (event) => {
+                const plan = button.getAttribute('data-plan');
+                if (planSelect) {
+                    planSelect.value = plan;
+                }
+                if (formSection) {
+                    formSection.scrollIntoView({ behavior: 'smooth' });
+                }
+                event.preventDefault();
+            });
+        });
+
+        if (planForm) {
+            planForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                if (statusMessage) {
+                    statusMessage.textContent = '';
+                    statusMessage.className = 'form-status';
+                }
+
+                const formData = new FormData(planForm);
+                const nombre = (formData.get('Nombre') || '').toString().trim();
+                const telefono = (formData.get('Telefono') || '').toString().trim();
+                const email = (formData.get('Email') || '').toString().trim();
+                const codigoPostal = (formData.get('Codigo Postal') || '').toString().trim();
+                const plan = (formData.get('Plan') || '').toString().trim();
+
+                if (!nombre || !telefono || !email || !codigoPostal || !plan) {
+                    planForm.reportValidity();
+                    return;
+                }
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Enviando...';
+                }
+
+                try {
+                    const response = await fetch('/api/leads', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ nombre, telefono, email, codigoPostal, plan })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('No se pudo guardar la solicitud');
+                    }
+
+                    planForm.reset();
+
+                    if (statusMessage) {
+                        statusMessage.textContent = 'Gracias por tu interés, le contactaremos pronto.';
+                        statusMessage.classList.add('success');
+                    }
+                } catch (error) {
+                    if (statusMessage) {
+                        statusMessage.textContent = 'No pudimos enviar tus datos. Por favor, inténtalo de nuevo.';
+                        statusMessage.classList.add('error');
+                    }
+                } finally {
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Enviar datos';
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>
