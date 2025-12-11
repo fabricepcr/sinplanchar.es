@@ -684,6 +684,7 @@
                 <h2 class="section-title" id="form-title">Déjanos tus datos y te llamamos</h2>
                 <p style="text-align: center; color: var(--text-medium); margin: -1rem auto 1.5rem; max-width: 650px;">Gracias por tu interés, te llamaremos lo más pronto posible.</p>
                 <form id="plan-form" novalidate style="display: grid; gap: 1rem; max-width: 700px; margin: 0 auto;">
+                <form id="plan-form" action="mailto:fc@nexo-capital.es" method="post" enctype="text/plain" style="display: grid; gap: 1rem; max-width: 700px; margin: 0 auto;">
                     <label style="display: flex; flex-direction: column; gap: 0.35rem; font-weight: 600; color: var(--text-dark);">
                         Nombre completo
                         <input type="text" name="Nombre" required placeholder="Tu nombre" style="padding: 0.75rem 0.85rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: 1rem;">
@@ -785,6 +786,9 @@
                     statusMessage.className = 'form-status';
                 }
 
+            planForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
                 const formData = new FormData(planForm);
                 const nombre = (formData.get('Nombre') || '').toString().trim();
                 const telefono = (formData.get('Telefono') || '').toString().trim();
@@ -830,6 +834,19 @@
                         submitButton.textContent = 'Enviar datos';
                     }
                 }
+                const subject = encodeURIComponent('Solicitud de plan mensual');
+                const bodyLines = [
+                    `Nombre: ${nombre}`,
+                    `Teléfono: ${telefono}`,
+                    `Email: ${email}`,
+                    `Código postal: ${codigoPostal}`,
+                    `Plan mensual: ${plan}`,
+                    '',
+                    'Mensaje: Gracias por tu interés, te llamaremos lo más pronto posible.'
+                ];
+
+                const mailtoLink = `mailto:fc@nexo-capital.es?subject=${subject}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+                window.location.href = mailtoLink;
             });
         }
     </script>
