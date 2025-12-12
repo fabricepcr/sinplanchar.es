@@ -1,0 +1,113 @@
+---
+const steps = [
+  { num: "1", title: "Recogemos", desc: "Pasamos a buscar tu ropa limpia cuando te venga bien." },
+  { num: "2", title: "Planchamos", desc: "Nuestros profesionales planchan cada prenda con cuidado." },
+  { num: "3", title: "Entregamos", desc: "Te la devolvemos perfecta en 24 horas, lista para usar." }
+];
+---
+
+<section class="section process">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Cómo funciona</span>
+      <h2 class="section-title">Así de fácil</h2>
+    </div>
+    <div class="steps-grid">
+      {steps.map((step) => (
+        <div class="step-card">
+          <div class="step-num">{step.num}</div>
+          <h3>{step.title}</h3>
+          <p>{step.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: 4rem 1.5rem;
+  }
+
+  .process {
+    background: var(--bg);
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    display: block;
+    color: var(--primary);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .step-card {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .step-num {
+    width: 56px;
+    height: 56px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.25rem;
+  }
+
+  .step-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .step-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    .steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .section {
+      padding: 5rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+</style>

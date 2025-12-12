@@ -1,0 +1,119 @@
+---
+const problems = [
+  { image: "/images/cumulated-laundry.png", text: "La ropa limpia se acumula sin planchar semana tras semana." },
+  { image: "/images/woman-tired.webp", text: "Tú ya tienes lavadora, solamente necesitas ayuda para planchar." }
+];
+---
+
+<section class="section problems">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">El problema</span>
+      <h2 class="section-title">¿Te suena familiar?</h2>
+    </div>
+    <div class="problem-grid">
+      {problems.map((problem, index) => (
+        <div class="problem-card" style={`animation-delay: ${index * 0.1}s`}>
+          <img src={problem.image} alt="" class="problem-image" />
+          <p>{problem.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: 4rem 1.5rem;
+  }
+
+  .problems {
+    background: var(--bg-alt);
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    display: block;
+    color: var(--primary);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .problem-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    overflow: hidden;
+  }
+
+  .problem-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .problem-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .problem-card p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  @media (min-width: 640px) {
+    .problem-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .problem-image {
+      height: 220px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .section {
+      padding: 5rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .problem-image {
+      height: 250px;
+    }
+  }
+</style>
