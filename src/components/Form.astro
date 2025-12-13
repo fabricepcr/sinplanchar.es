@@ -15,6 +15,15 @@
 </section>
 
 <script is:inline src="https://embed.typeform.com/next/embed.js"></script>
+<script is:inline>
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'form-submit') {
+      if (typeof gtag_report_conversion === 'function') {
+        gtag_report_conversion();
+      }
+    }
+  });
+</script>
 
 <style>
   .section {
